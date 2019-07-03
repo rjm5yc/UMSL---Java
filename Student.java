@@ -25,9 +25,7 @@ public class Student {
 	@Column(name = "ssn")
 	private int ssn;
 	
-	public Student() {
-	}
-	
+	public Student() {}
 	public Student(String fname, String lname, int ssn) {
 		this.firstName = fname;
 		this.lastName = lname;
@@ -38,7 +36,7 @@ public class Student {
 		return id;
 	}
 	
-	public void setId(int id) {
+	public void setId( int id ) {
 		this.id = id;
 	}
 	
@@ -46,7 +44,7 @@ public class Student {
 		return firstName;
 	}
 	
-	public void setFirstName(String first_name) {
+	public void setFirstName( String first_name ) {
 		this.firstName = first_name;
 	}
 	
@@ -54,7 +52,7 @@ public class Student {
 		return lastName;
 	}
 	
-	public void setLastName(String last_name) {
+	public void setLastName( String last_name ) {
 		this.lastName = last_name;
 	}
 	
@@ -62,7 +60,7 @@ public class Student {
 		return ssn;
 	}
 	
-	public void setSSN(int ssn) {
+	public void setSSN( int ssn ) {
 		this.ssn = ssn;
 	}
 	
