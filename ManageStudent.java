@@ -48,11 +48,57 @@ public class ManageStudent {
 				tx.commit();
 			} catch (HibernateException e) {
 				if (tx!=null) tx.rollback();
-				e.printStackTrace
+				e.printStackTrace();
+			} finally {
+				session.close();
 			}
+			return studentID;
 		}
 		
 		
+		public void listStudents( ){
+			Session session = factory.openSession();
+			Transaction tx = null;
+			
+			try {
+				tx = session.beginTransaction();
+				List students = session.createQuery("FROM Student").list();
+				for (Iterator iterator = students.iterator(); iterator.hasNext();){
+					Student student = (Student) iterator.next();
+					System.out.print("First Name: " + student.getFirstName());
+					System.out.print("  Last Name: " + student.getLastName());
+					System.out.println("  SSN: " + student.getSSN());
+				}
+				tx.commit();
+			} catch (HibernateException e) {
+			   if (tx!=null) tx.rollback();
+			   e.printStackTrace();
+			} finally {
+				session.close();
+			}
+		}
+			
+		
+		
+		public void updateStudent(Integer StudentID, int ssn ){
+			Session session = factory.openSession();
+			Transaction tx = null;
+			
+			try {
+				tx = session.beginTransaction();
+				Student student = (Student)session.get(Student.class, StudentID);
+				student.setSSN( ssn );
+					session.update(student);
+				tx.commit();
+			} catch (HibernateException e) {
+				if (tx!=null) tx.rollback();
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+		}
+		
+		publice void deleteStudent(Integer)
 	}
 	
 	
