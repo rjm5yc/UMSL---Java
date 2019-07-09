@@ -4,5 +4,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	<bean id="student" class="com.learning.springframework.Student"></bean>
+	<bean id="student" class="com.learning.springframework.Student">
+		<constructor-arg name="address" value="333 North Rock Avenue"></constructor-arg>
+		<constructor-arg name="GPA" value="3.77"></constructor-arg>
+	</bean>
 </beans>

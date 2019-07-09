@@ -15,5 +15,10 @@ public class App
     	student.getName();
     	
     	student.getSSN();
+    	
+    	student.toString();
+    	
+    	((ClassPathXmlApplicationContext) context).close();
+    	
     }
 }
